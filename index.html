@@ -3,298 +3,562 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Isabelle Corine, psicóloga em Natal</title>
+    <title>Isabelle Corine, psicóloga em Natal | Clínica Medicare</title>
     <meta
       name="description"
-      content="Psicoterapia presencial e on-line com Isabelle Corine, na Clínica Medicare, em Petrópolis, Natal/RN. Manhã, tarde e noite. Pós-graduanda em Neurociência e Comportamento. CRP 17/2286."
+      content="Psicoterapia presencial e online com Isabelle Corine, na Clínica Medicare, em Petrópolis, Natal/RN. Manhã, tarde e noite. Pós-graduanda em Neurociência e Comportamento. CRP 17/2286."
     />
-    <meta name="theme-color" content="#F7EFE8" />
-    <meta name="color-scheme" content="light" />
-    <link rel="icon" href="logo/logo-05.svg" type="image/svg+xml" />
+    <meta name="author" content="Isabelle Corine" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FBF4EC" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:title" content="Isabelle Corine, psicóloga em Natal" />
+    <meta
+      property="og:description"
+      content="Psicoterapia presencial e online na Clínica Medicare, em Petrópolis, Natal/RN. Manhã, tarde e noite. CRP 17/2286."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content="fotos/1000/isabelle-17-1000.webp" />
+    <meta property="og:image:alt" content="Isabelle Corine, de blusa marrom, sorrindo, com as mãos no queixo." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Isabelle Corine, psicóloga em Natal" />
+    <meta
+      name="twitter:description"
+      content="Psicoterapia presencial e online na Clínica Medicare, em Petrópolis, Natal/RN. CRP 17/2286."
+    />
+    <meta name="twitter:image" content="fotos/1000/isabelle-17-1000.webp" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,620;1,9..144,520&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="fotos/1000/isabelle-17-1000.webp"
+      imagesrcset="fotos/1000/isabelle-17-1000.webp 1000w, fotos/2000/isabelle-17-2000.webp 2000w"
+      imagesizes="(max-width: 860px) 88vw, 520px"
     />
     <link rel="stylesheet" href="styles.css" />
     <script>
-      document.documentElement.classList.add("js");
+      (function () {
+        var theme = "light";
+        try {
+          var saved = localStorage.getItem("isabelle-theme");
+          if (saved === "light" || saved === "dark") theme = saved;
+          else if (matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+        } catch (e) {}
+        var root = document.documentElement;
+        root.setAttribute("data-theme", theme);
+        root.style.colorScheme = theme;
+        root.classList.add("js");
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#1A1210" : "#FBF4EC");
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Psychologist", "MedicalBusiness"],
+        "name": "Isabelle Corine",
+        "description": "Psicóloga (CRP 17/2286), pós-graduanda em Neurociência e Comportamento. Psicoterapia presencial e online na Clínica Medicare, em Petrópolis, Natal/RN, de manhã, à tarde e à noite.",
+        "image": "fotos/1000/isabelle-17-1000.webp",
+        "telephone": "+55-84-8711-4502",
+        "email": "psi.isabellecorine@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Hermes da Fonseca, 503",
+          "addressLocality": "Natal",
+          "addressRegion": "RN",
+          "postalCode": "59014-165",
+          "addressCountry": "BR"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Natal"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "CRP",
+          "value": "17/2286"
+        },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "registro profissional",
+          "identifier": "CRP 17/2286"
+        },
+        "sameAs": [
+          "https://www.instagram.com/isabellecorine/",
+          "https://wa.me/5584996023393"
+        ],
+        "knowsLanguage": "pt-BR"
+      }
     </script>
   </head>
   <body>
-    <svg class="sprite" aria-hidden="true">
+    <svg class="sprite" aria-hidden="true" focusable="false">
       <symbol id="i-wa" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-      </symbol>
-      <symbol id="i-ig" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
-      </symbol>
-      <symbol id="i-mail" viewBox="0 0 24 24">
         <path
           fill="currentColor"
-          fill-rule="evenodd"
-          d="M2 5.25A1.75 1.75 0 0 1 3.75 3.5h16.5A1.75 1.75 0 0 1 22 5.25v13a1.75 1.75 0 0 1-1.75 1.75H3.75A1.75 1.75 0 0 1 2 18.25v-13Zm1.62.62 7.86 5.15a.9.9 0 0 0 .96 0l7.94-5.15H3.62Zm16.76 1.48-7.42 4.82a2.4 2.4 0 0 1-2.6 0L3.62 7.35v10.9h16.76V7.35Z"
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
         />
+      </symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" d="M3.5 6.25h17v11.5h-17v-11.5Z" />
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6" />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" d="M16.5 13.2A6.2 6.2 0 0 1 9.8 5.1 6.4 6.4 0 1 0 16.5 13.2Z" />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3.25" fill="none" stroke="currentColor" stroke-width="1.75" />
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M18 6l-1.6 1.6M7.6 16.4 6 18" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M4.5 7.5h15M4.5 12h15M4.5 16.5h15" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+      </symbol>
+      <symbol id="i-prev" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M14.5 6 8.5 12l6 6" />
+      </symbol>
+      <symbol id="i-next" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="m9.5 6 6 6-6 6" />
       </symbol>
     </svg>
 
     <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
     <header class="site-header">
-      <div class="wrap">
-        <a class="logo-link" href="#inicio">
-          <img
-            src="logo/logo-05.svg"
-            width="567"
-            height="567"
-            alt="Isabelle Corine. Acolher para transformar."
-          />
+      <div class="wrap header-bar">
+        <a class="logo-link" href="#inicio" aria-label="Isabelle Corine. Acolher para transformar. Início">
+          <img class="logo-for-light" src="logo/logo-05.svg" width="430" height="210" alt="" />
+          <img class="logo-for-dark" src="logo/logo-04.svg" width="430" height="210" alt="" />
         </a>
-        <nav class="site-nav" id="site-nav" aria-label="Seções">
+        <nav class="nav-panel" id="site-nav" aria-label="Seções">
           <a href="#sobre">Sobre</a>
           <a href="#atendimento">Atendimento</a>
           <a href="#percurso">Percurso</a>
           <a href="#onde">Onde</a>
-          <a href="#contato">Contato</a>
+          <a class="nav-wa" href="https://wa.me/5584996023393">WhatsApp</a>
         </nav>
-        <a class="btn header-wa" href="https://wa.me/5584996023393">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-          <span>WhatsApp</span>
-        </a>
-        <button
-          class="menu-button"
-          id="menu-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Abrir menu"
-        >
-          <span class="burger" aria-hidden="true"></span>
-        </button>
+        <div class="header-tools">
+          <a class="btn btn-primary header-wa" href="https://wa.me/5584996023393">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+            <span>WhatsApp</span>
+          </a>
+          <button class="icon-btn" id="theme-toggle" type="button" aria-pressed="false" aria-label="Ativar tema escuro">
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <button class="icon-btn menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+            <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu" /></svg>
+            <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close" /></svg>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="stage" id="stage" aria-roledescription="carrossel" aria-label="Fotografias de Isabelle Corine">
-          <div class="stage-frame">
-            <div class="slide is-current" id="slide-a">
-              <img
-                class="ken-run"
-                src="fotos/1000/isabelle-07-1000.webp"
-                srcset="fotos/1000/isabelle-07-1000.webp 1000w, fotos/2000/isabelle-07-2000.webp 2000w"
-                sizes="(max-width: 899px) 92vw, 500px"
-                width="1000"
-                height="1500"
-                alt="Isabelle Corine em pé, de conjunto off-white, sorrindo em um fundo bege."
-                fetchpriority="high"
-                decoding="async"
-              />
-            </div>
-            <div class="slide" id="slide-b">
-              <img
-                src="fotos/1000/isabelle-07-1000.webp"
-                srcset="fotos/1000/isabelle-07-1000.webp 1000w, fotos/2000/isabelle-07-2000.webp 2000w"
-                sizes="(max-width: 899px) 92vw, 500px"
-                width="1000"
-                height="1500"
-                alt=""
-                decoding="async"
-              />
-            </div>
-          </div>
-          <div class="stage-bar">
-            <button type="button" id="slide-prev" aria-label="Foto anterior">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.7 5.3 8.4 11.6l6.3 6.3 1.1-1.1-5.2-5.2 5.2-5.2-1.1-1.1Z" /></svg>
-            </button>
-            <p class="count"><span id="slide-now">01</span> / 10</p>
-            <button type="button" id="slide-pause" aria-pressed="false">
-              <span class="sr" id="pause-label">Pausar apresentação</span>
-              <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 4.5h3.5v15H6v-15Zm8.5 0H18v15h-3.5v-15Z" /></svg>
-              <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" hidden><path fill="currentColor" d="M8 5.2v13.6L18.8 12 8 5.2Z" /></svg>
-            </button>
-            <button type="button" id="slide-next" aria-label="Próxima foto">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m9.3 5.3 6.3 6.3-6.3 6.3-1.1-1.1 5.2-5.2-5.2-5.2 1.1-1.1Z" /></svg>
-            </button>
-          </div>
+        <div class="decor" aria-hidden="true">
+          <span class="blob blob-a"></span>
+          <span class="blob blob-b float-blob"></span>
+          <span class="blob blob-c float-blob"></span>
         </div>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="kicker" data-intro>Psicóloga em Natal</p>
+            <h1 id="hero-title" data-intro>Psicoterapia em Natal, no consultório <em>ou online</em>.</h1>
+            <p class="lede" data-intro>
+              <span translate="no">Isabelle Corine</span> atende na
+              <span translate="no">Clínica Medicare</span>, em Petrópolis, e também online.
+              Os encontros podem ser de manhã, à tarde ou à noite.
+            </p>
+            <p class="credential" data-intro>
+              Psicóloga, <span translate="no">CRP&nbsp;17/2286</span>. Pós-graduanda em Neurociência e Comportamento.
+            </p>
+            <div class="actions" data-intro>
+              <a class="btn btn-primary" href="https://wa.me/5584996023393">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+                Conversar no WhatsApp
+              </a>
+              <a class="btn btn-line" href="#como-funciona">Ver como começa</a>
+            </div>
+          </div>
 
-        <div class="hero-copy">
-          <p class="role">Psicóloga</p>
-          <h1 id="hero-title" translate="no">Isabelle<br />Corine</h1>
-          <svg class="signature" viewBox="0 0 320 28" aria-hidden="true">
-            <path d="M2 16C28 16 36 7 62 13c28 6 34 12 62 4 30-8 48-12 78 2 26 12 48 8 70-2 16-7 28-6 46 1" />
-          </svg>
-          <p class="tagline">Acolher para transformar</p>
-          <p class="lede">Psicoterapia presencial e on-line, de manhã, à tarde e à noite.</p>
-          <p class="quiet">Pós-graduanda em Neurociência e Comportamento.</p>
-          <div class="actions">
-            <a class="btn" href="https://wa.me/5584996023393">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-              Conversar no WhatsApp
-            </a>
-            <a class="btn btn-line" href="#como-funciona">Como funciona</a>
+          <div class="stage-col" data-hero-carousel>
+            <div class="stage-frame">
+              <div
+                class="stage mask-arch"
+                role="region"
+                aria-roledescription="carrossel"
+                aria-label="Fotos de Isabelle Corine"
+                tabindex="0"
+              >
+                <div class="slides">
+                  <figure class="slide is-current">
+                    <img
+                      src="fotos/1000/isabelle-17-1000.webp"
+                      srcset="fotos/1000/isabelle-17-1000.webp 1000w, fotos/2000/isabelle-17-2000.webp 2000w"
+                      sizes="(max-width: 860px) 88vw, 520px"
+                      width="667"
+                      height="1000"
+                      alt="Isabelle Corine de blusa marrom, mãos no queixo, sorrindo em fundo taupe."
+                      fetchpriority="high"
+                      decoding="async"
+                    />
+                    <figcaption>Isabelle Corine, psicóloga.</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img
+                      src="fotos/1000/isabelle-09-1000.webp"
+                      srcset="fotos/1000/isabelle-09-1000.webp 1000w, fotos/2000/isabelle-09-2000.webp 2000w"
+                      sizes="(max-width: 860px) 88vw, 520px"
+                      width="667"
+                      height="1000"
+                      alt="Isabelle Corine de camisa branca, braços cruzados, sorriso suave, em fundo cinza."
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>Isabelle Corine, psicóloga.</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img
+                      src="fotos/1000/isabelle-06-1000.webp"
+                      srcset="fotos/1000/isabelle-06-1000.webp 1000w, fotos/2000/isabelle-06-2000.webp 2000w"
+                      sizes="(max-width: 860px) 88vw, 520px"
+                      width="667"
+                      height="1000"
+                      alt="Isabelle Corine de blazer preto e camisa branca, mãos sobrepostas, em fundo cinza."
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>Isabelle Corine, psicóloga.</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img
+                      src="fotos/1000/isabelle-01-1000.webp"
+                      srcset="fotos/1000/isabelle-01-1000.webp 1000w, fotos/2000/isabelle-01-2000.webp 2000w"
+                      sizes="(max-width: 860px) 88vw, 520px"
+                      width="667"
+                      height="1000"
+                      alt="Isabelle Corine de blazer preto e camisa branca, sorriso discreto, em fundo cinza."
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>Isabelle Corine, psicóloga.</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img
+                      src="fotos/1000/isabelle-19-1000.webp"
+                      srcset="fotos/1000/isabelle-19-1000.webp 1000w, fotos/2000/isabelle-19-2000.webp 2000w"
+                      sizes="(max-width: 860px) 88vw, 520px"
+                      width="667"
+                      height="1000"
+                      alt="Isabelle Corine de blazer preto, sorrindo, em fundo claro."
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>Isabelle Corine, psicóloga.</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img
+                      src="fotos/1000/isabelle-07-1000.webp"
+                      srcset="fotos/1000/isabelle-07-1000.webp 1000w, fotos/2000/isabelle-07-2000.webp 2000w"
+                      sizes="(max-width: 860px) 88vw, 520px"
+                      width="667"
+                      height="1000"
+                      alt="Isabelle Corine de blusa bege, em pé, sorriso suave, em fundo claro."
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>Isabelle Corine, psicóloga.</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <button class="stage-arrow stage-prev" type="button" data-prev aria-label="Foto anterior">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-prev" /></svg>
+              </button>
+              <button class="stage-arrow stage-next" type="button" data-next aria-label="Próxima foto">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-next" /></svg>
+              </button>
+            </div>
+            <div class="stage-meta">
+              <div class="stage-dots" role="tablist" aria-label="Escolher foto"></div>
+              <button class="stage-pause" type="button" data-pause hidden aria-pressed="false">Pausar</button>
+            </div>
           </div>
         </div>
       </section>
 
-      <div class="essay" aria-label="Ensaio fotográfico">
-        <figure class="clip px w5 feature" style="--d: 0ms">
-          <img data-parallax src="fotos/1000/isabelle-01-1000.webp" srcset="fotos/1000/isabelle-01-1000.webp 1000w, fotos/2000/isabelle-01-2000.webp 2000w" sizes="(max-width: 899px) 100vw, 42vw" width="1000" height="1500" alt="Isabelle Corine sentada, de blusa marrom, mão no queixo, sorrindo em fundo claro." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip w3 sink" style="--d: 90ms">
-          <img src="fotos/1000/isabelle-04-1000.webp" srcset="fotos/1000/isabelle-04-1000.webp 1000w, fotos/2000/isabelle-04-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 22vw" width="1000" height="1500" alt="Isabelle Corine em pé, de blazer magenta, mãos nos bolsos, sorrindo." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip w4" style="--d: 160ms">
-          <img src="fotos/1000/isabelle-10-1000.webp" srcset="fotos/1000/isabelle-10-1000.webp 1000w, fotos/2000/isabelle-10-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 28vw" width="1000" height="1500" alt="Isabelle Corine sentada, de camisa branca, mãos juntas, em fundo bege." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip w4 sink" style="--d: 40ms">
-          <img src="fotos/1000/isabelle-12-1000.webp" srcset="fotos/1000/isabelle-12-1000.webp 1000w, fotos/2000/isabelle-12-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 28vw" width="1000" height="1500" alt="Isabelle Corine sentada, de blusa marrom, mãos entrelaçadas, em fundo cinza." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip px w5" style="--d: 120ms">
-          <img data-parallax src="fotos/1000/isabelle-13-1000.webp" srcset="fotos/1000/isabelle-13-1000.webp 1000w, fotos/2000/isabelle-13-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 36vw" width="1000" height="1500" alt="Isabelle Corine de blazer preto com bolinhas, com a mão cobrindo um olho." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip w3" style="--d: 180ms">
-          <img src="fotos/1000/isabelle-14-1000.webp" srcset="fotos/1000/isabelle-14-1000.webp 1000w, fotos/2000/isabelle-14-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 22vw" width="1000" height="1500" alt="Isabelle Corine de camisa branca, apoiada em uma superfície clara, sorrindo." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip w3 sink" style="--d: 0ms">
-          <img src="fotos/1000/isabelle-06-1-1000.webp" srcset="fotos/1000/isabelle-06-1-1000.webp 1000w, fotos/2000/isabelle-06-1-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 22vw" width="1000" height="1500" alt="Isabelle Corine de blazer magenta, sorrindo de leve, com a mão no ombro." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip w4" style="--d: 80ms">
-          <img src="fotos/1000/isabelle-13-1-1000.webp" srcset="fotos/1000/isabelle-13-1-1000.webp 1000w, fotos/2000/isabelle-13-1-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 28vw" width="1000" height="1500" alt="Isabelle Corine de blazer preto com bolinhas, mão no rosto, olhando para a câmera." loading="lazy" decoding="async" />
-        </figure>
-        <figure class="clip px w5" style="--d: 140ms">
-          <img data-parallax src="fotos/1000/isabelle-18-2-1000.webp" srcset="fotos/1000/isabelle-18-2-1000.webp 1000w, fotos/2000/isabelle-18-2-2000.webp 2000w" sizes="(max-width: 899px) 100vw, 38vw" width="1000" height="1500" alt="Isabelle Corine de blazer preto, olhando para a câmera, em fundo cinza." loading="lazy" decoding="async" />
-        </figure>
+      <div class="wave wave-from-bg wave-to-blush" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path fill="currentColor" d="M0 48c160 36 280-28 460-18 200 12 300 46 500 28 180-16 320-52 480-22v54H0Z" />
+        </svg>
       </div>
 
-      <section class="block" id="sobre">
-        <div class="wrap split">
-          <figure class="portrait clip">
-            <img src="fotos/1000/isabelle-08-1000.webp" srcset="fotos/1000/isabelle-08-1000.webp 1000w, fotos/2000/isabelle-08-2000.webp 2000w" sizes="(max-width: 899px) 100vw, 38vw" width="1000" height="1500" alt="Isabelle Corine sentada, de conjunto off-white, em fundo bege." loading="lazy" decoding="async" />
-          </figure>
-          <div class="reveal">
-            <h2>Um espaço de conversa, no consultório ou on-line.</h2>
-            <p>
-              Isabelle Corine é psicóloga. O atendimento acontece em Natal, no
-              bairro de Petrópolis, e também on-line. O horário pode ser de
-              manhã, à tarde ou à noite, combinado no primeiro contato.
-            </p>
-            <p>
-              A formação complementar em Neurociência e Comportamento está em
-              curso. Ela é pós-graduanda: esta página não apresenta esse
-              percurso como título concluído.
-            </p>
-            <p>Registro profissional: <span translate="no">CRP&nbsp;17/2286</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="atendimento">
-        <div class="wrap split">
-          <div class="reveal">
-            <h2>Presencial, on-line, e nos três períodos do dia.</h2>
-            <dl class="modes">
-              <div>
-                <dt>Presencial</dt>
-                <dd>Encontros de psicoterapia no consultório, na Av.&nbsp;Hermes da Fonseca, 503, Petrópolis, Natal/RN.</dd>
-              </div>
-              <div>
-                <dt>On-line</dt>
-                <dd>Psicoterapia à distância, para quem prefere ou precisa do encontro remoto. O formato é combinado antes de começar.</dd>
-              </div>
-              <div>
-                <dt>Horários</dt>
-                <dd>A agenda cobre manhã, tarde e noite. O horário se define em conjunto, sem garantia de vaga imediata.</dd>
-              </div>
-            </dl>
-          </div>
-          <figure class="portrait clip" style="--d: 120ms">
-            <img src="fotos/1000/isabelle-15-1000.webp" srcset="fotos/1000/isabelle-15-1000.webp 1000w, fotos/2000/isabelle-15-2000.webp 2000w" sizes="(max-width: 899px) 86vw, 40vw" width="1000" height="1500" alt="Isabelle Corine de blusa marrom, sorrindo, com os braços apoiados sobre livros." loading="lazy" decoding="async" />
-          </figure>
-        </div>
-      </section>
-
-      <section class="block" id="percurso">
-        <div class="wrap trio">
-          <figure class="portrait clip">
-            <img src="fotos/1000/isabelle-02-1000.webp" srcset="fotos/1000/isabelle-02-1000.webp 1000w, fotos/2000/isabelle-02-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 24vw" width="1000" height="1500" alt="Close de Isabelle Corine de blazer magenta, segurando um modelo de cérebro junto ao rosto." loading="lazy" decoding="async" />
-          </figure>
-          <div class="reveal copy">
-            <h2>Estudo em andamento, ao lado da clínica.</h2>
-            <p>
-              A pós-graduação em Neurociência e Comportamento faz parte do
-              percurso atual. Convive com a prática da psicoterapia e ainda não
-              é uma especialidade concluída.
-            </p>
-            <p>
-              O que se combina no início é simples: presencial ou on-line, e o
-              período do dia. Não há aqui uma lista de abordagens que não tenha
-              sido publicada.
-            </p>
-          </div>
-          <figure class="portrait clip" style="--d: 140ms">
-            <img src="fotos/1000/isabelle-19-1000.webp" srcset="fotos/1000/isabelle-19-1000.webp 1000w, fotos/2000/isabelle-19-2000.webp 2000w" sizes="(max-width: 899px) 48vw, 24vw" width="1000" height="1500" alt="Isabelle Corine de blazer preto, mão na cabeça, sorrindo." loading="lazy" decoding="async" />
-          </figure>
-        </div>
-      </section>
-
-      <section class="block sequence" id="como-funciona">
+      <section class="ribbon" aria-labelledby="temas-title">
         <div class="wrap">
-          <div class="reveal">
-            <h2>Do primeiro recado ao encontro.</h2>
-            <ol class="steps">
-              <li>
-                <span class="num">1</span>
-                <div>
+          <h2 id="temas-title" class="visually-hidden">Temas de conversa</h2>
+          <p class="disclaimer" data-reveal>
+            Assuntos que muitas pessoas levam a uma conversa clínica. Não são especialidades desta página.
+          </p>
+        </div>
+        <div class="marquee" data-marquee aria-hidden="true">
+          <div class="marquee-track">
+            <p class="marquee-group">
+              <span>Ansiedade</span><span class="dot" aria-hidden="true">·</span>
+              <span>Autoestima</span><span class="dot" aria-hidden="true">·</span>
+              <span>Relacionamentos</span><span class="dot" aria-hidden="true">·</span>
+              <span>Ansiedade</span><span class="dot" aria-hidden="true">·</span>
+              <span>Autoestima</span><span class="dot" aria-hidden="true">·</span>
+              <span>Relacionamentos</span><span class="dot" aria-hidden="true">·</span>
+            </p>
+            <p class="marquee-group marquee-clone">
+              <span>Ansiedade</span><span class="dot" aria-hidden="true">·</span>
+              <span>Autoestima</span><span class="dot" aria-hidden="true">·</span>
+              <span>Relacionamentos</span><span class="dot" aria-hidden="true">·</span>
+              <span>Ansiedade</span><span class="dot" aria-hidden="true">·</span>
+              <span>Autoestima</span><span class="dot" aria-hidden="true">·</span>
+              <span>Relacionamentos</span><span class="dot" aria-hidden="true">·</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="wave wave-from-blush wave-to-sand" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path fill="currentColor" d="M0 36c220 40 340-8 560 8 210 16 300 40 520 10 160-22 250-40 360-16v52H0Z" />
+        </svg>
+      </div>
+
+      <section class="band" id="atendimento" aria-labelledby="atendimento-title">
+        <div class="decor" aria-hidden="true">
+          <span class="blob blob-d"></span>
+        </div>
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="kicker">Atendimento</p>
+            <h2 id="atendimento-title">Como é o atendimento</h2>
+          </div>
+          <dl class="facts">
+            <div class="fact lift" data-reveal>
+              <dt>Presencial</dt>
+              <dd>Encontros no consultório da <span translate="no">Clínica Medicare</span>, na Av.&nbsp;Hermes da Fonseca, 503, Petrópolis.</dd>
+            </div>
+            <div class="fact lift" data-reveal>
+              <dt>Online</dt>
+              <dd>Psicoterapia à distância, para quem prefere ou precisa do encontro remoto. O formato é combinado antes de começar.</dd>
+            </div>
+            <div class="fact lift" data-reveal>
+              <dt>Horários</dt>
+              <dd>Manhã, tarde e noite. O horário é combinado no primeiro contato, sem garantia de vaga imediata.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="wave wave-from-sand wave-to-bg" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path fill="currentColor" d="M0 42c180-30 420 40 680 18 220-18 380-46 760-10v40H0Z" />
+        </svg>
+      </div>
+
+      <section class="block" id="sobre" aria-labelledby="sobre-title">
+        <div class="wrap split">
+          <div class="copy" data-reveal>
+            <p class="kicker">Sobre</p>
+            <h2 id="sobre-title">Uma conversa, no consultório <em>ou online</em>.</h2>
+            <p>
+              O atendimento é de psicoterapia. No primeiro contato, combinamos se o encontro será presencial ou online, e em qual período do dia.
+            </p>
+            <p>
+              <span translate="no">Isabelle Corine</span> é psicóloga, registro
+              <span translate="no">CRP&nbsp;17/2286</span>. O consultório fica em Natal, no bairro de Petrópolis.
+            </p>
+          </div>
+          <figure class="portrait mask-blob zoom" data-reveal>
+            <img
+              src="fotos/1000/isabelle-08-1000.webp"
+              srcset="fotos/1000/isabelle-08-1000.webp 1000w, fotos/2000/isabelle-08-2000.webp 2000w"
+              sizes="(max-width: 860px) 88vw, 420px"
+              width="667"
+              height="1000"
+              alt="Isabelle Corine de blusa bege, sentada, sorriso suave, em fundo claro."
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="block block-sand" id="percurso" aria-labelledby="percurso-title">
+        <div class="wrap split split-photo-first">
+          <figure class="portrait mask-arch zoom" data-reveal>
+            <img
+              src="fotos/1000/isabelle-15-1000.webp"
+              srcset="fotos/1000/isabelle-15-1000.webp 1000w, fotos/2000/isabelle-15-2000.webp 2000w"
+              sizes="(max-width: 860px) 88vw, 420px"
+              width="667"
+              height="1000"
+              alt="Isabelle Corine de blusa marrom, sorrindo, com os braços apoiados sobre livros."
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div class="copy" data-reveal>
+            <p class="kicker">Percurso</p>
+            <h2 id="percurso-title">Estudo em andamento, ao lado da clínica.</h2>
+            <p>
+              A pós-graduação em Neurociência e Comportamento está em curso. Convive com a prática da psicoterapia e ainda não é uma especialidade concluída.
+            </p>
+            <p>
+              Esta página não lista preços nem abordagens que não tenham sido publicadas. O que se combina no início é o modo do encontro e o período do dia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="retratos" aria-labelledby="retratos-title">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="kicker">Retratos</p>
+            <h2 id="retratos-title">Retratos de estúdio</h2>
+            <p class="section-note">As imagens são de estúdio. Não mostram o consultório da <span translate="no">Clínica Medicare</span>.</p>
+          </div>
+          <div class="gallery">
+            <figure class="shot mask-arch zoom" data-reveal>
+              <img
+                src="fotos/1000/isabelle-05-1000.webp"
+                srcset="fotos/1000/isabelle-05-1000.webp 1000w, fotos/2000/isabelle-05-2000.webp 2000w"
+                sizes="(max-width: 720px) 88vw, 46vw"
+                width="667"
+                height="1000"
+                alt="Isabelle Corine de blazer magenta, sentada, sorrindo, em fundo cinza."
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="shot mask-soft zoom" data-reveal>
+              <img
+                src="fotos/1000/isabelle-10-1000.webp"
+                srcset="fotos/1000/isabelle-10-1000.webp 1000w, fotos/2000/isabelle-10-2000.webp 2000w"
+                sizes="(max-width: 720px) 88vw, 28vw"
+                width="667"
+                height="1000"
+                alt="Isabelle Corine de blazer preto, sorrindo, com a mão no cabelo, em fundo cinza."
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="shot mask-soft zoom" data-reveal>
+              <img
+                src="fotos/1000/isabelle-02-1000.webp"
+                srcset="fotos/1000/isabelle-02-1000.webp 1000w, fotos/2000/isabelle-02-2000.webp 2000w"
+                sizes="(max-width: 720px) 88vw, 28vw"
+                width="667"
+                height="1000"
+                alt="Isabelle Corine de blazer magenta, ao lado de um modelo de cérebro, em fundo escuro."
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="shot mask-blob zoom" data-reveal>
+              <img
+                src="fotos/1000/isabelle-13-1000.webp"
+                srcset="fotos/1000/isabelle-13-1000.webp 1000w, fotos/2000/isabelle-13-2000.webp 2000w"
+                sizes="(max-width: 720px) 88vw, 46vw"
+                width="667"
+                height="1000"
+                alt="Isabelle Corine com a mão sobre um dos olhos, em fundo claro."
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="block block-blush" id="como-funciona" aria-labelledby="comeco-title">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="kicker">Começo</p>
+            <h2 id="comeco-title">Do primeiro recado ao encontro.</h2>
+          </div>
+          <div class="steps" data-steps-carousel>
+            <p class="visually-hidden" data-steps-live aria-live="polite"></p>
+            <div
+              class="steps-viewport"
+              role="region"
+              aria-roledescription="carrossel"
+              aria-label="Como começa a psicoterapia"
+              tabindex="0"
+            >
+              <ol class="steps-track">
+                <li class="step lift">
+                  <span class="num" aria-hidden="true">1</span>
                   <h3>Você escreve</h3>
                   <p>O contato começa pelo WhatsApp. Conte, no seu tempo, o que busca.</p>
-                </div>
-              </li>
-              <li>
-                <span class="num">2</span>
-                <div>
+                </li>
+                <li class="step lift">
+                  <span class="num" aria-hidden="true">2</span>
                   <h3>Conversa inicial</h3>
-                  <p>Um primeiro contato alinha se será presencial ou on-line, e em qual período do dia.</p>
-                </div>
-              </li>
-              <li>
-                <span class="num">3</span>
-                <div>
+                  <p>Um primeiro contato alinha se será presencial ou online, e em qual período do dia.</p>
+                </li>
+                <li class="step lift">
+                  <span class="num" aria-hidden="true">3</span>
                   <h3>Combinação</h3>
                   <p>Horário e formato ficam acordados antes dos encontros. Nada começa sem esse alinhamento.</p>
-                </div>
-              </li>
-              <li>
-                <span class="num">4</span>
-                <div>
+                </li>
+                <li class="step lift">
+                  <span class="num" aria-hidden="true">4</span>
                   <h3>Encontros</h3>
-                  <p>A psicoterapia segue no ritmo combinado. Não há promessa de resultado, prazo ou cura.</p>
-                </div>
-              </li>
-            </ol>
-            <div class="actions after-steps">
-              <a class="btn" href="https://wa.me/5584996023393">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-                Escrever no WhatsApp
-              </a>
+                  <p>A psicoterapia segue o ritmo combinado. Não há promessa de resultado, prazo ou cura.</p>
+                </li>
+              </ol>
             </div>
+            <div class="steps-ui">
+              <button class="icon-btn" type="button" data-step-prev aria-label="Passo anterior">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-prev" /></svg>
+              </button>
+              <div class="stage-dots" data-step-dots role="tablist" aria-label="Escolher passo"></div>
+              <button class="icon-btn" type="button" data-step-next aria-label="Próximo passo">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-next" /></svg>
+              </button>
+            </div>
+          </div>
+          <div class="actions after-steps">
+            <a class="btn btn-primary" href="https://wa.me/5584996023393">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+              Escrever no WhatsApp
+            </a>
           </div>
         </div>
       </section>
 
-      <section class="block" id="onde">
-        <div class="wrap where-grid">
-          <div class="reveal" id="contato">
-            <h2>Clínica Medicare</h2>
-            <p class="address">
+      <section class="block" id="onde" aria-labelledby="onde-title">
+        <div class="wrap where">
+          <div class="copy" id="contato" data-reveal>
+            <p class="kicker">Onde</p>
+            <h2 id="onde-title"><span translate="no">Clínica Medicare</span></h2>
+            <address>
               Av.&nbsp;Hermes da Fonseca, 503<br />
               Petrópolis, Natal/RN<br />
               59014-165
-            </p>
-            <p>Consultório em Petrópolis. Atendimento também on-line, de manhã, à tarde e à noite.</p>
-            <dl class="contact-list">
+            </address>
+            <p>Consultório em Petrópolis. Atendimento também online, de manhã, à tarde e à noite.</p>
+            <dl class="contacts">
               <div>
                 <dt>WhatsApp</dt>
                 <dd><a href="https://wa.me/5584996023393">(84)&nbsp;9&nbsp;9602-3393</a></dd>
@@ -309,7 +573,12 @@
               </div>
               <div>
                 <dt>Instagram</dt>
-                <dd><a href="https://www.instagram.com/isabellecorine/" translate="no">@isabellecorine</a></dd>
+                <dd>
+                  <a href="https://www.instagram.com/isabellecorine/" translate="no">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig" /></svg>
+                    @isabellecorine
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt>Registro</dt>
@@ -317,7 +586,7 @@
               </div>
             </dl>
             <div class="actions">
-              <a class="btn" href="https://wa.me/5584996023393">
+              <a class="btn btn-primary" href="https://wa.me/5584996023393">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
                 Chamar no WhatsApp
               </a>
@@ -327,7 +596,7 @@
               >Como chegar</a>
             </div>
           </div>
-          <div class="map-frame">
+          <div class="map mask-soft" data-reveal>
             <iframe
               title="Mapa da Clínica Medicare, Avenida Hermes da Fonseca, 503, Petrópolis, Natal"
               loading="lazy"
@@ -340,38 +609,39 @@
     </main>
 
     <footer class="site-footer">
-      <div class="wrap">
-        <img
-          class="footer-logo"
-          src="logo/logo-04.svg"
-          width="567"
-          height="567"
-          alt="Isabelle Corine. Acolher para transformar."
-          decoding="async"
-        />
-        <p>
-          Av.&nbsp;Hermes da Fonseca, 503, Petrópolis, Natal/RN, 59014-165<br />
-          Psicoterapia presencial e on-line. Manhã, tarde e noite.
-        </p>
-        <div class="icon-row">
-          <a class="icon-btn" href="https://www.instagram.com/isabellecorine/" aria-label="Instagram de Isabelle Corine">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig" /></svg>
-          </a>
-          <a class="icon-btn" href="https://wa.me/5584996023393" aria-label="WhatsApp de Isabelle Corine">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-          </a>
-          <a class="icon-btn" href="mailto:psi.isabellecorine@gmail.com" aria-label="Enviar e-mail para Isabelle Corine">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail" /></svg>
-          </a>
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo logo-for-light" src="logo/logo-05.svg" width="430" height="210" alt="" decoding="async" />
+          <img class="footer-logo logo-for-dark" src="logo/logo-04.svg" width="430" height="210" alt="" decoding="async" />
         </div>
-        <p class="fine" translate="no">CRP&nbsp;17/2286</p>
-        <p class="fine">© 2026 <span translate="no">Isabelle Corine</span></p>
+        <div>
+          <p>
+            Av.&nbsp;Hermes da Fonseca, 503, Petrópolis, Natal/RN, 59014-165<br />
+            Psicoterapia presencial e online. Manhã, tarde e noite.
+          </p>
+          <div class="icon-row">
+            <a class="icon-btn" href="https://www.instagram.com/isabellecorine/" aria-label="Instagram de Isabelle Corine">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig" /></svg>
+            </a>
+            <a class="icon-btn" href="https://wa.me/5584996023393" aria-label="WhatsApp de Isabelle Corine">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+            </a>
+            <a class="icon-btn" href="mailto:psi.isabellecorine@gmail.com" aria-label="Enviar e-mail para Isabelle Corine">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail" /></svg>
+            </a>
+          </div>
+          <p class="fine" translate="no">CRP&nbsp;17/2286</p>
+          <p class="fine">© 2026 <span translate="no">Isabelle Corine</span></p>
+        </div>
       </div>
     </footer>
 
-    <a class="wa-float" href="https://wa.me/5584996023393" aria-label="Conversar no WhatsApp">
+    <a class="wa-float" href="https://wa.me/5584996023393" aria-label="Conversar no WhatsApp pelo número (84) 9 9602-3393">
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
     </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
     <script src="site.js" defer></script>
   </body>
 </html>
