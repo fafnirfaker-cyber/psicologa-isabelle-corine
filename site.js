@@ -214,42 +214,22 @@
   function mountHero(motion, cleanups) {
     var rootEl = document.querySelector("[data-hero-carousel]");
     if (!rootEl) return;
-    var stage = rootEl.querySelector(".stage");
-    var slides = gsap.utils.toArray(rootEl.querySelectorAll(".slide"));
+    var slides = gsap.utils.toArray(rootEl.querySelectorAll(".hero-slide"));
     var images = slides.map(function (slide) {
       return slide.querySelector("img");
     });
-    var dotsWrap = rootEl.querySelector(".stage-dots");
-    var pauseBtn = rootEl.querySelector("[data-pause]");
     var count = slides.length;
+    if (!count) return;
     var index = 0;
     var timer = null;
     var ken = null;
     var transition = null;
-    var paused = false;
-    var pointerInside = false;
-    var focusInside = false;
-    var hold = 5.5;
-
-    slides.forEach(function (slide, i) {
-      var dot = document.createElement("button");
-      dot.type = "button";
-      dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", "Foto " + (i + 1) + " de " + count);
-      dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
-      dot.addEventListener("click", function () {
-        go(i, true);
-      });
-      dotsWrap.appendChild(dot);
-    });
-    var dots = gsap.utils.toArray(dotsWrap.querySelectorAll("button"));
+    var hold = 5.2;
 
     function setSlideState(active) {
       slides.forEach(function (slide, i) {
         var on = i === active;
         slide.classList.toggle("is-current", on);
-        slide.setAttribute("aria-hidden", on ? "false" : "true");
-        if (dots[i]) dots[i].setAttribute("aria-selected", on ? "true" : "false");
       });
     }
 
@@ -257,7 +237,11 @@
       if (ken) ken.kill();
       ken = null;
       if (!motion || !img) return;
-      ken = gsap.fromTo(img, { scale: 1.08 }, { scale: 1, duration: 6.4, ease: "none" });
+      ken = gsap.fromTo(
+        img,
+        { scale: 1.08 },
+        { scale: 1.02, duration: 6.2, ease: "none" }
+      );
     }
 
     function disarm() {
@@ -265,25 +249,18 @@
       timer = null;
     }
 
-    function canRun() {
-      return motion && !paused && !pointerInside && !focusInside;
-    }
-
     function arm() {
       disarm();
-      if (!canRun()) return;
+      if (!motion || count < 2) return;
       timer = gsap.delayedCall(hold, function () {
-        go(index + 1, false);
+        go(index + 1);
         arm();
       });
     }
 
-    function go(next, fromUser) {
+    function go(next) {
       next = (next + count) % count;
-      if (next === index) {
-        if (fromUser) arm();
-        return;
-      }
+      if (next === index) return;
       var prev = index;
       index = next;
       setSlideState(index);
@@ -291,115 +268,29 @@
       if (!motion) {
         gsap.set(slides, { autoAlpha: 0 });
         gsap.set(slides[index], { autoAlpha: 1 });
-        if (fromUser) arm();
         return;
       }
       transition = gsap.timeline({ defaults: { ease: "power2.inOut", overwrite: "auto" } });
       transition
-        .to(slides[prev], { autoAlpha: 0, duration: 0.85 }, 0)
-        .fromTo(slides[index], { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.85 }, 0);
+        .to(slides[prev], { autoAlpha: 0, duration: 1.15 }, 0)
+        .fromTo(slides[index], { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.15 }, 0);
       playKen(images[index]);
-      if (fromUser) arm();
-    }
-
-    function setPaused(next) {
-      paused = next;
-      if (!pauseBtn) return;
-      pauseBtn.setAttribute("aria-pressed", paused ? "true" : "false");
-      pauseBtn.textContent = paused ? "Retomar" : "Pausar";
-      pauseBtn.setAttribute("aria-label", paused ? "Retomar apresentação" : "Pausar apresentação");
-      if (paused) disarm();
-      else arm();
     }
 
     gsap.set(slides, { autoAlpha: 0 });
     gsap.set(slides[0], { autoAlpha: 1 });
     setSlideState(0);
-    stage.classList.add("is-ready");
     rootEl.classList.add("is-ready");
-    if (pauseBtn) pauseBtn.hidden = !motion;
+
     if (motion) {
       playKen(images[0]);
       arm();
     }
 
-    function onPrev() {
-      go(index - 1, true);
-    }
-    function onNext() {
-      go(index + 1, true);
-    }
-    function onPause() {
-      setPaused(!paused);
-    }
-    function onKey(event) {
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        go(index + 1, true);
-      } else if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        go(index - 1, true);
-      }
-    }
-
-    var startX = 0;
-    var tracking = false;
-    function onDown(event) {
-      if (event.target.closest("button")) return;
-      tracking = true;
-      startX = event.clientX;
-    }
-    function onUp(event) {
-      if (!tracking) return;
-      tracking = false;
-      var dx = event.clientX - startX;
-      if (Math.abs(dx) < 42) return;
-      go(index + (dx < 0 ? 1 : -1), true);
-    }
-    function onEnter() {
-      pointerInside = true;
-      disarm();
-    }
-    function onLeave() {
-      pointerInside = false;
-      arm();
-    }
-    function onFocusIn() {
-      focusInside = true;
-      disarm();
-    }
-    function onFocusOut(event) {
-      if (rootEl.contains(event.relatedTarget)) return;
-      focusInside = false;
-      arm();
-    }
-
-    rootEl.querySelector("[data-prev]").addEventListener("click", onPrev);
-    rootEl.querySelector("[data-next]").addEventListener("click", onNext);
-    if (pauseBtn) pauseBtn.addEventListener("click", onPause);
-    rootEl.addEventListener("keydown", onKey);
-    stage.addEventListener("pointerdown", onDown);
-    stage.addEventListener("pointerup", onUp);
-    rootEl.addEventListener("pointerenter", onEnter);
-    rootEl.addEventListener("pointerleave", onLeave);
-    rootEl.addEventListener("focusin", onFocusIn);
-    rootEl.addEventListener("focusout", onFocusOut);
-
     cleanups.push(function () {
       disarm();
       if (ken) ken.kill();
       if (transition) transition.kill();
-      rootEl.querySelector("[data-prev]").removeEventListener("click", onPrev);
-      rootEl.querySelector("[data-next]").removeEventListener("click", onNext);
-      if (pauseBtn) pauseBtn.removeEventListener("click", onPause);
-      rootEl.removeEventListener("keydown", onKey);
-      stage.removeEventListener("pointerdown", onDown);
-      stage.removeEventListener("pointerup", onUp);
-      rootEl.removeEventListener("pointerenter", onEnter);
-      rootEl.removeEventListener("pointerleave", onLeave);
-      rootEl.removeEventListener("focusin", onFocusIn);
-      rootEl.removeEventListener("focusout", onFocusOut);
-      dotsWrap.innerHTML = "";
     });
   }
 
