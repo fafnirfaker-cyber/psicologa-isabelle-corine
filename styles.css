@@ -247,8 +247,7 @@ a:hover {
   display: block;
 }
 
-.logo-link img,
-.footer-logo {
+.logo-link img {
   height: 42px;
   width: auto;
 }
@@ -970,7 +969,9 @@ address {
 }
 
 .footer-logo {
-  height: 54px;
+  height: 60px;
+  width: auto;
+  max-height: 64px;
 }
 
 .icon-row {
@@ -1068,6 +1069,11 @@ address {
   .footer-grid {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     align-items: end;
+  }
+
+  .footer-logo {
+    height: 88px;
+    max-height: 96px;
   }
 }
 
