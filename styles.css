@@ -287,8 +287,9 @@ a:hover {
   gap: 0.4rem;
 }
 
-.header-wa {
-  display: none;
+.header-wa,
+a.header-wa.btn {
+  display: none !important;
 }
 
 .icon {
@@ -1218,8 +1219,9 @@ address {
     order: -1;
   }
 
-  .header-wa {
-    display: inline-flex;
+  .header-wa,
+  a.header-wa.btn {
+    display: inline-flex !important;
   }
 
   .nav-wa {
