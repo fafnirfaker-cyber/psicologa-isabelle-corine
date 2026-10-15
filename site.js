@@ -41,34 +41,75 @@
   }
 
   var mainEl = document.getElementById("conteudo");
+  var footerEl = document.querySelector("footer.site-footer") || document.querySelector("footer");
+  var skipEl = document.querySelector("a.skip");
+  var floatWrapEl = document.querySelector(".wa-float-wrap");
+  var logoLink = document.querySelector(".logo-link");
   var menuTrapHandler = null;
 
   function getMenuFocusables() {
     var list = [];
-    if (menuButton) list.push(menuButton);
+    if (logoLink) list.push(logoLink);
     if (nav) {
       nav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])').forEach(function (el) {
         list.push(el);
       });
     }
     var theme = document.getElementById("theme-toggle");
-    if (theme && list.indexOf(theme) === -1) list.push(theme);
-    return list.filter(function (el) {
-      return el && !el.disabled && el.offsetParent !== null;
+    if (theme) list.push(theme);
+    if (menuButton) list.push(menuButton);
+
+    var seen = [];
+    list.forEach(function (el) {
+      if (!el || el.disabled) return;
+      if (seen.indexOf(el) !== -1) return;
+      /* display:none / off-screen panels: offsetParent null — keep menuButton even if quirky */
+      if (el !== menuButton && el.offsetParent === null && getComputedStyle(el).position !== "fixed") {
+        var cs = getComputedStyle(el);
+        if (cs.display === "none" || cs.visibility === "hidden") return;
+      }
+      seen.push(el);
     });
+
+    seen.sort(function (a, b) {
+      if (a === b) return 0;
+      var pos = a.compareDocumentPosition(b);
+      if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+      if (pos & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+      return 0;
+    });
+    return seen;
+  }
+
+  function setElInert(el, on) {
+    if (!el) return;
+    if ("inert" in HTMLElement.prototype) {
+      el.inert = !!on;
+      return;
+    }
+    if (on) {
+      el.setAttribute("aria-hidden", "true");
+      el.setAttribute("data-menu-inert", "true");
+    } else if (el.getAttribute("data-menu-inert") === "true") {
+      el.removeAttribute("aria-hidden");
+      el.removeAttribute("data-menu-inert");
+    }
   }
 
   function setMenuInert(on) {
-    if (!mainEl) return;
-    if ("inert" in HTMLElement.prototype) {
-      mainEl.inert = on;
-    } else if (on) {
-      mainEl.setAttribute("aria-hidden", "true");
-      mainEl.setAttribute("data-menu-inert", "true");
-    } else if (mainEl.getAttribute("data-menu-inert") === "true") {
-      mainEl.removeAttribute("aria-hidden");
-      mainEl.removeAttribute("data-menu-inert");
+    setElInert(mainEl, on);
+    setElInert(footerEl, on);
+    setElInert(skipEl, on);
+    setElInert(floatWrapEl, on);
+  }
+
+  function focusIndexInSet(focusables, el) {
+    var i = focusables.indexOf(el);
+    if (i !== -1) return i;
+    for (var n = 0; n < focusables.length; n++) {
+      if (focusables[n].contains(el)) return n;
     }
+    return -1;
   }
 
   function closeMenu() {
@@ -78,6 +119,7 @@
     menuButton.setAttribute("aria-label", "Abrir menu");
     nav.classList.remove("is-open");
     nav.removeAttribute("aria-modal");
+    nav.removeAttribute("role");
     document.body.classList.remove("menu-open");
     document.body.style.overflow = "";
     setMenuInert(false);
@@ -92,6 +134,7 @@
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Fechar menu");
     nav.classList.add("is-open");
+    nav.setAttribute("role", "dialog");
     nav.setAttribute("aria-modal", "true");
     document.body.classList.add("menu-open");
     document.body.style.overflow = "hidden";
@@ -110,15 +153,16 @@
       if (event.key !== "Tab") return;
       var focusables = getMenuFocusables();
       if (!focusables.length) return;
-      var firstEl = focusables[0];
-      var lastEl = focusables[focusables.length - 1];
-      if (event.shiftKey && document.activeElement === firstEl) {
-        event.preventDefault();
-        lastEl.focus();
-      } else if (!event.shiftKey && document.activeElement === lastEl) {
-        event.preventDefault();
-        firstEl.focus();
+      var i = focusIndexInSet(focusables, document.activeElement);
+      event.preventDefault();
+      if (i === -1) {
+        focusables[0].focus();
+        return;
       }
+      var next = event.shiftKey ? i - 1 : i + 1;
+      if (next < 0) next = focusables.length - 1;
+      if (next >= focusables.length) next = 0;
+      focusables[next].focus();
     };
     document.addEventListener("keydown", menuTrapHandler, true);
   }
