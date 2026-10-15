@@ -19,7 +19,8 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:image" content="fotos/1000/isabelle-17-1000.webp" />
+    <meta property="og:url" content="https://fafnirfaker-cyber.github.io/psicologa-isabelle-corine/" />
+    <meta property="og:image" content="https://fafnirfaker-cyber.github.io/psicologa-isabelle-corine/fotos/1000/isabelle-17-1000.webp" />
     <meta property="og:image:alt" content="Isabelle Corine, de blusa marrom, sorrindo, com as mãos no queixo." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Isabelle Corine, psicóloga em Natal" />
@@ -27,7 +28,8 @@
       name="twitter:description"
       content="Psicoterapia presencial e online na Clínica Medicare, em Petrópolis, Natal/RN. CRP 17/2286."
     />
-    <meta name="twitter:image" content="fotos/1000/isabelle-17-1000.webp" />
+    <meta name="twitter:image" content="https://fafnirfaker-cyber.github.io/psicologa-isabelle-corine/fotos/1000/isabelle-17-1000.webp" />
+    <link rel="canonical" href="https://fafnirfaker-cyber.github.io/psicologa-isabelle-corine/" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,7 +42,7 @@
       as="image"
       href="fotos/1000/isabelle-17-1000.webp"
       imagesrcset="fotos/1000/isabelle-17-1000.webp 1000w, fotos/2000/isabelle-17-2000.webp 2000w"
-      imagesizes="(max-width: 860px) 88vw, 520px"
+      imagesizes="100vw"
     />
     <link rel="stylesheet" href="styles.css" />
     <script>
@@ -65,9 +67,23 @@
         "@type": ["Psychologist", "MedicalBusiness"],
         "name": "Isabelle Corine",
         "description": "Psicóloga (CRP 17/2286), pós-graduanda em Neurociência e Comportamento. Psicoterapia presencial e online na Clínica Medicare, em Petrópolis, Natal/RN, de manhã, à tarde e à noite.",
-        "image": "fotos/1000/isabelle-17-1000.webp",
-        "telephone": "+55-84-8711-4502",
+        "image": "https://fafnirfaker-cyber.github.io/psicologa-isabelle-corine/fotos/1000/isabelle-17-1000.webp",
+        "telephone": ["+55-84-99602-3393", "+55-84-8711-4502"],
         "email": "psi.isabellecorine@gmail.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+55-84-99602-3393",
+            "contactType": "WhatsApp",
+            "availableLanguage": "Portuguese"
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+55-84-8711-4502",
+            "contactType": "Recepção da clínica",
+            "availableLanguage": "Portuguese"
+          }
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Av. Hermes da Fonseca, 503",
@@ -150,7 +166,6 @@
           <a href="#atendimento">Atendimento</a>
           <a href="#percurso">Percurso</a>
           <a href="#onde">Onde</a>
-          <a class="nav-wa" href="https://wa.me/5584996023393">WhatsApp</a>
         </nav>
         <div class="header-tools">
           <a class="btn btn-primary header-wa" href="https://wa.me/5584996023393">
@@ -235,56 +250,8 @@
             </figure>
             <figure class="hero-slide">
               <img
-                src="fotos/1000/isabelle-07-1000.webp"
-                srcset="fotos/1000/isabelle-07-1000.webp 1000w, fotos/2000/isabelle-07-2000.webp 2000w"
-                sizes="100vw"
-                width="2000"
-                height="3000"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="hero-slide">
-              <img
-                src="fotos/1000/isabelle-05-1000.webp"
-                srcset="fotos/1000/isabelle-05-1000.webp 1000w, fotos/2000/isabelle-05-2000.webp 2000w"
-                sizes="100vw"
-                width="2000"
-                height="3000"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="hero-slide">
-              <img
                 src="fotos/1000/isabelle-08-1000.webp"
                 srcset="fotos/1000/isabelle-08-1000.webp 1000w, fotos/2000/isabelle-08-2000.webp 2000w"
-                sizes="100vw"
-                width="2000"
-                height="3000"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="hero-slide">
-              <img
-                src="fotos/1000/isabelle-10-1000.webp"
-                srcset="fotos/1000/isabelle-10-1000.webp 1000w, fotos/2000/isabelle-10-2000.webp 2000w"
-                sizes="100vw"
-                width="2000"
-                height="3000"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="hero-slide">
-              <img
-                src="fotos/1000/isabelle-15-1000.webp"
-                srcset="fotos/1000/isabelle-15-1000.webp 1000w, fotos/2000/isabelle-15-2000.webp 2000w"
                 sizes="100vw"
                 width="2000"
                 height="3000"
@@ -296,6 +263,15 @@
           </div>
           <div class="hero-scrim"></div>
         </div>
+        <button
+          type="button"
+          class="hero-pause"
+          aria-pressed="false"
+          aria-label="Pausar fotos de fundo"
+          data-hero-pause
+        >
+          <span class="hero-pause-label" data-hero-pause-label>Pausar</span>
+        </button>
         <div class="decor" aria-hidden="true">
           <span class="blob blob-a"></span>
           <span class="blob blob-b float-blob"></span>
@@ -314,7 +290,7 @@
               Psicóloga, <span translate="no">CRP&nbsp;17/2286</span>. Pós-graduanda em Neurociência e Comportamento.
             </p>
             <div class="actions" data-intro>
-              <a class="btn btn-primary" href="https://wa.me/5584996023393">
+              <a class="btn btn-primary" href="https://wa.me/5584996023393" data-hero-wa>
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
                 Conversar no WhatsApp
               </a>
@@ -347,7 +323,7 @@
               <span>Autoestima</span><span class="dot" aria-hidden="true">·</span>
               <span>Relacionamentos</span><span class="dot" aria-hidden="true">·</span>
             </p>
-            <p class="marquee-group marquee-clone">
+            <p class="marquee-group marquee-clone" aria-hidden="true">
               <span>Ansiedade</span><span class="dot" aria-hidden="true">·</span>
               <span>Autoestima</span><span class="dot" aria-hidden="true">·</span>
               <span>Relacionamentos</span><span class="dot" aria-hidden="true">·</span>
@@ -501,12 +477,6 @@
               </button>
             </div>
           </div>
-          <div class="actions after-steps">
-            <a class="btn btn-primary" href="https://wa.me/5584996023393">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-              Escrever no WhatsApp
-            </a>
-          </div>
         </div>
       </section>
 
@@ -521,7 +491,7 @@
               59014-165
             </address>
             <p>Consultório em Petrópolis. Atendimento também online, de manhã, à tarde e à noite.</p>
-            <dl class="contacts">
+            <dl class="contacts contact-list">
               <div>
                 <dt>WhatsApp</dt>
                 <dd><a href="https://wa.me/5584996023393">(84)&nbsp;9&nbsp;9602-3393</a></dd>
@@ -549,10 +519,6 @@
               </div>
             </dl>
             <div class="actions">
-              <a class="btn btn-primary" href="https://wa.me/5584996023393">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-                Chamar no WhatsApp
-              </a>
               <a
                 class="btn btn-line"
                 href="https://www.google.com/maps/dir/?api=1&amp;destination=Cl%C3%ADnica%20Medicare%2C%20Av.%20Hermes%20da%20Fonseca%2C%20503%2C%20Petr%C3%B3polis%2C%20Natal%20RN%2C%2059014-165"
@@ -586,9 +552,6 @@
             <a class="icon-btn" href="https://www.instagram.com/isabellecorine/" aria-label="Instagram de Isabelle Corine">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig" /></svg>
             </a>
-            <a class="icon-btn" href="https://wa.me/5584996023393" aria-label="WhatsApp de Isabelle Corine">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-            </a>
             <a class="icon-btn" href="mailto:psi.isabellecorine@gmail.com" aria-label="Enviar e-mail para Isabelle Corine">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail" /></svg>
             </a>
@@ -599,9 +562,11 @@
       </div>
     </footer>
 
-    <a class="wa-float" href="https://wa.me/5584996023393" aria-label="Conversar no WhatsApp pelo número (84) 9 9602-3393">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
-    </a>
+    <aside class="wa-float-wrap" aria-label="Contato rápido">
+      <a class="wa-float" href="https://wa.me/5584996023393" aria-label="Conversar no WhatsApp pelo número (84) 9 9602-3393" data-wa-float>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa" /></svg>
+      </a>
+    </aside>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
